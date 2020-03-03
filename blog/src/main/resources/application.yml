@@ -1,0 +1,39 @@
+server:
+  port: 8080
+#  servlet:
+#    context-path: /blog
+
+spring:
+  profiles:
+    active: dev
+
+  jpa:
+    database: MYSQL
+    show-sql: true
+    properties:
+      hibernate:
+        dialect:
+          org.hibernate.dialect.MySQL5InnoDBDialect
+
+  #==================================================#
+  #================ Database Setting ================#
+  #==================================================#
+  datasource:
+    dbcp2:
+      min-idle: 1 #指定必须保持连接的最小值
+      max-total: 20
+      initial-size: 1 #指定启动连接池时，初始建立的连接数量
+      max-wait-millis: 60000
+      validation-query: SELECT 1 #指定获取连接时连接校验的sql查询语句
+      test-on-borrow: false #获取连接时候验证，会影响性能
+      test-while-idle: true #当连接空闲时，是否执行连接测试
+      time-between-eviction-runs-millis: 60000 #指定空闲连接检查、废弃连接清理、空闲连接池大小调整之间的操作时间间隔
+    hikari:
+      max-lifetime: 30000
+      minimum-idle: 3
+      maximum-pool-size: 10
+      connection-test-query: SELECT 1
+aliyun:
+  param:
+    accessKeyId: LTAIxAKMGB4CIEET
+    accessSecret: p2YrZlZAPOejhx98qHwpZ4BGfxxRlw
