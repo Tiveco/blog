@@ -23,9 +23,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/sms")
 public class ShortMessageService {
 
-    @Value("${aliyun.param.accessKeyId}")
+    @Value("${aliyun.param.sms.accessKeyId}")
     private String accessKeyId;
-    @Value("${aliyun.param.accessSecret}")
+    @Value("${aliyun.param.sms.accessSecret}")
     private String accessSecret;
 
     @Autowired

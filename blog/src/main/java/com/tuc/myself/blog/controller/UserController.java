@@ -27,8 +27,8 @@ public class UserController {
         return new ResponseResult<>(userService.login(user));
     }
 
-    @GetMapping
-    public ResponseResult<String> smsLogin(@RequestParam("telephone") String telephone, @RequestParam("smsCode") String smsCode) {
+    @GetMapping("/login/sms/{mobile}/{smsCode}")
+    public ResponseResult<String> smsLogin(@PathVariable("mobile") String telephone, @PathVariable("smsCode") String smsCode) {
         return new ResponseResult<>(userService.smsLogin(telephone, smsCode));
     }
 
