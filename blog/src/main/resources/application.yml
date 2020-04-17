@@ -35,5 +35,5 @@ spring:
 aliyun:
   param:
     sms:
-      accessKeyId: ***********
-      accessSecret: ***********
+      accessKeyId: ******
+      accessSecret: ******
